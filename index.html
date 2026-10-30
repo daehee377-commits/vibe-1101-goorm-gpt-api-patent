@@ -1,105 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPC/CPC 코드 자동 탐색기</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>🔍 특허 출원코드 자동 탐색기</h1>
-            <p class="subtitle">기술 설명을 입력하면 AI가 관련 IPC/CPC 코드를 추천합니다</p>
-        </header>
-
-        <main>
-            <!-- 입력 섹션 -->
-            <section class="input-section">
-                <label for="techInput">기술 설명 또는 키워드</label>
-                <textarea 
-                    id="techInput" 
-                    placeholder="예: 리튬이온 배터리의 열관리 시스템, 냉각판과 히트파이프를 활용한 능동형 온도 제어"
-                    rows="6"
-                ></textarea>
-                
-                <div class="quick-examples">
-                    <span class="label">빠른 시작:</span>
-                    <button class="example-btn" data-text="리튬이온 배터리 열관리 시스템, 냉각판과 히트파이프를 활용한 능동형 온도 제어">배터리 열관리</button>
-                    <button class="example-btn" data-text="모듈형 에너지 저장 시스템(ESS)의 액체 냉각 기술, 열교환기 설계">모듈형 ESS 냉각</button>
-                    <button class="example-btn" data-text="AI 기반 이미지 인식, 딥러닝 신경망을 이용한 실시간 객체 검출">AI 이미지 인식</button>
-                    <button class="example-btn" data-text="블록체인 기반 스마트 계약, 분산 원장 기술을 활용한 자동 거래">블록체인 스마트계약</button>
-                </div>
-
-                <div class="button-group">
-                    <button id="searchBtn" class="primary-btn">
-                        <span class="btn-text">IPC/CPC 코드 탐색</span>
-                        <span class="spinner" style="display: none;"></span>
-                    </button>
-                </div>
-            </section>
-
-            <!-- 결과 섹션 -->
-            <section class="result-section" id="resultSection" style="display: none;">
-                <div class="result-header">
-                    <h2>추천 결과</h2>
-                    <div class="token-usage" id="tokenUsage"></div>
-                </div>
-
-                <div class="table-wrapper">
-                    <table id="resultTable">
-                        <thead>
-                            <tr>
-                                <th>코드</th>
-                                <th>코드명</th>
-                                <th>추천 이유</th>
-                                <th>관련 키워드</th>
-                            </tr>
-                        </thead>
-                        <tbody id="resultBody">
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="action-buttons">
-                    <button id="csvDownloadBtn" class="action-btn">
-                        📥 CSV 다운로드
-                    </button>
-                    <button id="copyMarkdownBtn" class="action-btn">
-                        📋 마크다운 복사
-                    </button>
-                    <button id="regenerateBtn" class="action-btn secondary">
-                        🔄 재생성
-                    </button>
-                </div>
-            </section>
-
-            <!-- 에러 섹션 -->
-            <section class="error-section" id="errorSection" style="display: none;">
-                <div class="error-box">
-                    <h3>⚠️ 결과를 가져올 수 없습니다</h3>
-                    <p id="errorMessage"></p>
-                    <div class="error-actions">
-                        <button id="retryBtn" class="primary-btn">다시 시도</button>
-                    </div>
-                    <div class="error-tips">
-                        <p><strong>💡 팁:</strong></p>
-                        <ul>
-                            <li>기술 설명을 더 구체적으로 작성해보세요</li>
-                            <li>핵심 기술 키워드를 포함해주세요</li>
-                            <li>특허 분류가 명확한 기술 분야를 입력해보세요</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <p>Powered by OpenAI GPT-4o-mini | <a href="https://github.com" target="_blank">GitHub</a></p>
-        </footer>
-    </div>
-
-    <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI 주간 업무보고</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
-
